@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   root to: 'pages#index'
   get 'pages/about', to: 'pages#about', as: "about"
   get 'pages/contact', to: "pages#contact", as: "contact"
