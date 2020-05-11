@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Src</title>
+    <title>D-Artiste</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+      <%= link_to root_path do %>
+      <%= image_tag("D-Artiste-Logo-White", alt: "logo", class: "navbar-brand d-flex align-items-center") %>
+      <% end %>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "About", about_path, class: "nav-link" %>
+          </li>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Artwork", artworks_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Contact", contact_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>   
     <%= yield %>
+        <!-- Footer -->
+    <footer>
+      <div class="footer">   
+        <div class="row">
+          <div class="col">
+            <nav class="nav justify-content-center">
+                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="#">Contact Us</a>
+                <a class="nav-link text-white" href="#">Follow Us</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
