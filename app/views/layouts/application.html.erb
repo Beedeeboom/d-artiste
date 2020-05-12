@@ -18,7 +18,7 @@
       <% end %>
     
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
@@ -27,35 +27,44 @@
           </li>
           </li>
           <li class="nav-item active">
-            <%= link_to "Artworks", artworks_path, class: "nav-link" %>
+            <%= link_to "Buy Artworks", artworks_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Contact Us", contact_path, class: "nav-link" %>
+          </li>
+        <% if user_signed_in? %>
+
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item active">
+            <%= link_to "My Account", edit_user_registration_path, method: "edit", class: "btn btn-secondary btn-sm ml-3 mr-3"%>
           </li>
           <li class="nav-item active">
-            <%= link_to "Contact", contact_path, class: "nav-link" %>
+            <%= link_to "Log Out", destroy_user_session_path, method: "delete", class: "btn btn-secondary btn-sm mr-3 text-white" %>
           </li>
         </ul>
+
+        <% else %>
+
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item active">
+            <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary btn-sm ml-3 mr-3 text-white" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-secondary btn-sm mr-3 text-white" %>
+          </li>
+        </ul>
+
+        <% end %> 
+         
+        </ul>
           <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Artworks..." aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
           </form>
       </div>
     </nav> 
-    <br>
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p> 
     <%= yield %>
-        <%# <!-- Footer -->
-    <footer>
-      <div class="footer bg-light">   
-        <div class="row">
-          <div class="col">
-            <nav class="nav justify-content-center">
-                <a class="nav-link text-dark" href="#">About Us</a>
-                <a class="nav-link text-dark" href="#">Contact Us</a>
-                <a class="nav-link text-dark" href="#">Follow Us</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </footer> %>
   </body>
 </html>
