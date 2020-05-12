@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
       <%= link_to root_path do %>
-      <%= image_tag("D-Artiste-Logo-White.png", alt: "logo", class: "navbar-brand d-flex align-items-center") %>
+      <%= image_tag("D-Artiste-Logo-small.png", alt: "logo", class: "navbar-brand d-flex align-items-center") %>
       <% end %>
     
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -27,7 +27,7 @@
           </li>
           </li>
           <li class="nav-item active">
-            <%= link_to "Artwork", artworks_path, class: "nav-link" %>
+            <%= link_to "Artworks", artworks_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Contact", contact_path, class: "nav-link" %>
@@ -39,7 +39,7 @@
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p> 
     <%= yield %>
-        <!-- Footer -->
+        <%# <!-- Footer -->
     <footer>
       <div class="footer bg-light">   
         <div class="row">
@@ -52,6 +52,6 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> %>
   </body>
 </html>
