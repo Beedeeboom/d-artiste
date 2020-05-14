@@ -5,10 +5,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>My Artworks</h1>
-
 <table>
   <thead>
     <tr>
+      <th><th>
       <th>Title</th>
       <th>Description</th>
       <th>Size</th>
@@ -21,6 +21,7 @@
   <tbody>
     <% @arts.each do |art| %>
       <tr>
+      <td><%= image_tag(art.picture, width: 250, height: 160) if art.picture.attached? %></td>
         <td><%= art.title %></td>
         <td><%= art.description %></td>
         <td><%= art.size %></td>

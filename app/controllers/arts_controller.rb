@@ -1,17 +1,17 @@
 class ArtsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_art, only: [:show, :edit, :update, :destroy, :account]
+  before_action :set_art, only: [:show, :edit, :update, :destroy]
 
   # GET /arts
   # GET /arts.json
   def index
     @arts = Art.where(user_id: current_user.id)
-      # @arts = Art.all
   end
 
   # GET /arts/1
   # GET /arts/1.json
   def show
+    @art = Art.find(params[:id])
   end
 
   # GET /arts/new
@@ -31,7 +31,7 @@ class ArtsController < ApplicationController
   def create
     @art = Art.new(art_params)
     @art.user_id = current_user.id
-
+    @art.picture.attach(art_params[:picture])
     respond_to do |format|
       if @art.save
         format.html { redirect_to @art, notice: 'Art was successfully created.' }
@@ -71,9 +71,6 @@ class ArtsController < ApplicationController
     end
   end
 
-  def account
-  end
-
   private
 
     def authorize
@@ -89,6 +86,6 @@ class ArtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def art_params
-      params.require(:art).permit(:title, :description, :size, :price, :user_id)
+      params.require(:art).permit(:picture, :title, :description, :size, :price, :user_id)
     end
 end

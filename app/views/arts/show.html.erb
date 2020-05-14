@@ -3,7 +3,7 @@
 <br>
 <br>
 <p id="notice"><%= notice %></p>
-
+<h1>Your Artwork</h1>
 <p>
   <strong>Title:</strong>
   <%= @art.title %>
@@ -21,7 +21,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @art.price %>
+  <%= number_to_currency @art.price %>
+</p>
+
+<p>
+  <strong>Add Image:</strong>
+  <%= image_tag @art.picture, width: 300 %>
 </p>
 
 <p>

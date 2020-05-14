@@ -7,7 +7,5 @@ Rails.application.routes.draw do
   get 'pages/contact', to: "pages#contact", as: "contact"
   get 'pages/buy', to: "pages#buy", as: "buy"
   resources :users
-  # resources :users, only: [:show, :index,]
-  get 'arts/account', to: "arts#account", as: "account"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

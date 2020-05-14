@@ -6,6 +6,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Description</th>
       <th>Size</th>
@@ -17,14 +18,14 @@
   <tbody>
     <% @arts.each do |art| %>
       <tr>
+        <td><%= image_tag(art.picture, width: 250, height: 160) if art.picture.attached? %></td>
         <td><%= art.title %></td>
         <td><%= art.description %></td>
         <td><%= art.size %></td>
-        <td><%= art.price %></td>
+        <td><%= number_to_currency art.price %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 </div>
