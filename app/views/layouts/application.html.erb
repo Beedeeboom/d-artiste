@@ -27,7 +27,7 @@
           </li>
           </li>
           <li class="nav-item active">
-            <%= link_to "Buy Artworks", arts_path, class: "nav-link" %>
+            <%= link_to "Buy Art", buy_path, class: "nav-link" %>
           </li>
           <li>
             <%= link_to "Contact Us", contact_path, class: "nav-link" %>
@@ -36,7 +36,7 @@
 
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item active">
-            <%= link_to "My Account", edit_user_registration_path, method: "edit", class: "btn btn-secondary btn-sm ml-3 mr-3"%>
+            <%= link_to "My Account", "/arts", class: "btn btn-secondary btn-sm ml-3 mr-3"%>
           </li>
           <li class="nav-item active">
             <%= link_to "Log Out", destroy_user_session_path, method: "delete", class: "btn btn-secondary btn-sm mr-3 text-white" %>
@@ -50,7 +50,7 @@
             <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary btn-sm ml-3 mr-3 text-white" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-secondary btn-sm mr-3 text-white" %>
+            <%= link_to "Sell Art", new_user_registration_path, class: "btn btn-secondary btn-sm mr-3 text-white" %>
           </li>
         </ul>
 

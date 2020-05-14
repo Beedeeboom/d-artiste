@@ -1,11 +1,12 @@
 class ArtsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_art, only: [:show, :edit, :update, :destroy]
+  before_action :set_art, only: [:show, :edit, :update, :destroy, :account]
 
   # GET /arts
   # GET /arts.json
   def index
-    @arts = Art.all
+    @arts = Art.where(user_id: current_user.id)
+      # @arts = Art.all
   end
 
   # GET /arts/1
@@ -20,6 +21,9 @@ class ArtsController < ApplicationController
 
   # GET /arts/1/edit
   def edit
+    unless current_user == @art.user
+      redirect_back fallback_location: root_path, notice: 'Please sign in'
+    end
   end
 
   # POST /arts
@@ -56,11 +60,18 @@ class ArtsController < ApplicationController
   # DELETE /arts/1
   # DELETE /arts/1.json
   def destroy
-    @art.destroy
-    respond_to do |format|
-      format.html { redirect_to arts_url, notice: 'Art was successfully destroyed.' }
-      format.json { head :no_content }
+    unless current_user == @art.user
+      redirect_back fallback_location: root_path, notice: 'Please sign in'
+    else
+        @art.destroy
+        respond_to do |format|
+          format.html { redirect_to arts_url, notice: 'Art was successfully destroyed.' }
+          format.json { head :no_content }
+      end
     end
+  end
+
+  def account
   end
 
   private

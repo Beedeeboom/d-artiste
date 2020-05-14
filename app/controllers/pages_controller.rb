@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def buy
+    @arts = Art.all
+  end
 end
