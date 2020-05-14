@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_082133) do
+ActiveRecord::Schema.define(version: 2020_05_14_030553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "artworks", force: :cascade do |t|
+  create_table "arts", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "size"
     t.decimal "price"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_arts_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -53,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_05_13_082133) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "arts", "users"
 end

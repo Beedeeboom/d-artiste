@@ -3,9 +3,13 @@
 one:
   title: MyString
   description: MyText
+  size: MyString
   price: 9.99
+  user: one
 
 two:
   title: MyString
   description: MyText
+  size: MyString
   price: 9.99
+  user: two
