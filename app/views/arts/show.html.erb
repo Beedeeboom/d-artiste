@@ -3,7 +3,16 @@
 <br>
 <br>
 <p id="notice"><%= notice %></p>
+<% if current_user == @art.user%>
 <h1>Your Artwork</h1>
+<% else %>
+<h1>Artwork</h1>
+<% end %>
+
+<p>
+  <%= image_tag @art.picture, width: 300 %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @art.title %>
@@ -24,16 +33,17 @@
   <%= number_to_currency @art.price %>
 </p>
 
-<p>
-  <strong>Add Image:</strong>
-  <%= image_tag @art.picture, width: 300 %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @art.user_id %>
-</p>
-
+<% if current_user == @art.user%>
 <%= link_to 'Edit', edit_art_path(@art) %> |
 <%= link_to 'Back', arts_path %>
+<% else %>
+<%= link_to "Buy Now!", new_order_path(art_id: @art.id) %> 
+<% end %>
+<br>
+<br>
+<br>
 <div>
+
+
+
+  

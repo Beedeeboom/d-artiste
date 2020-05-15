@@ -1,0 +1,10 @@
+<br>
+<br>
+<br>
+<div class="container">
+<h1>Your Order</h1>
+<%= image_tag @art.picture, width: 120 if @art.picture.attached? %>
+<h1><%= @art.title %></h1>
+<h5><%= number_to_currency @art.price %></h5>
+<button id="pay-now">Checkout Now</button>
+</div>

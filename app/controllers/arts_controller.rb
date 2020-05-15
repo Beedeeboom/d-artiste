@@ -4,7 +4,7 @@ class ArtsController < ApplicationController
 
   # GET /arts
   # GET /arts.json
-  def index
+  def index 
     @arts = Art.where(user_id: current_user.id)
   end
 

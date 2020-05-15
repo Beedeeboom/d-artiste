@@ -23,6 +23,8 @@
         <td><%= art.description %></td>
         <td><%= art.size %></td>
         <td><%= number_to_currency art.price %></td>
+        <td><%= link_to 'Preview', art %></td>
+        
       </tr>
     <% end %>
   </tbody>
