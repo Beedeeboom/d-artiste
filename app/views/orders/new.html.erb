@@ -8,3 +8,20 @@
 <h5><%= number_to_currency @art.price %></h5>
 <button id="pay-now">Checkout Now</button>
 </div>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+function redirectToStripe() {
+    var stripe = Stripe('<%= Rails.application.credentials.dig(:stripe, :publishable_key) %>');
+    stripe.redirectToCheckout({
+        sessionId: '<%= @session.id %>'
+    }).then(function (result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+    });
+}
+
+document.querySelector("#pay-now").addEventListener("click", redirectToStripe)
+
+</script>

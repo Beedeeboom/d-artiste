@@ -58,3 +58,5 @@ gem "rolify", "~> 5.2"
 gem 'hirb'
 
 gem "cloudinary", "~> 1.14"
+
+gem "stripe", "~> 5.22"
