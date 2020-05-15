@@ -58,3 +58,4 @@ gem "rolify", "~> 5.2"
 gem 'hirb'
 gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
+#testing
