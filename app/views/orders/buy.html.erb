@@ -2,32 +2,30 @@
 <br>
 <br>
 <div class="container">
-<h1>Buy Art<h1>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Size</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @arts.each do |art| %>
-      <tr>
-        <td><%= image_tag(art.picture, width: 250, height: 160) if art.picture.attached? %></td>
-        <td><%= art.title %></td>
-        <td><%= art.description %></td>
-        <td><%= art.size %></td>
-        <td><%= number_to_currency art.price %></td>
-        <td><%= link_to 'Preview', art %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<div class="card mb-3 bg-light">
+  <div class="card-body">
+    <h1 class="card-title">Buy Art</h1>
+    <p class="card-text">Search through a variety of artworks and find your unique style.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
 </div>
+
+<div class="container">
+<div class="row">
+  <% @arts.each do |art|%>
+  <div class="card" style="width: 20rem; margin: 20px; padding: 20px;">
+    <%= image_tag art.picture, class:"card-img-top", alt:"Artwork" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= art.title %></h5>
+      <p class="card-text"><%= art.description%></p>
+      <h4><%= number_to_currency(art.price) %></h4>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Preview', art, class:"btn btn-outline-dark" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+<br>
+<br>

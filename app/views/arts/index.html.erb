@@ -1,39 +1,35 @@
+<div style="background: #000;">
 <div class="container">
 <br>
 <br>
 <br>
+<div style="background: #000;">
 <p id="notice"><%= notice %></p>
-
-<h1>My Artworks</h1>
-<table>
-  <thead>
-    <tr>
-      <th><th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Size</th>
-      <th>Price</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @arts.each do |art| %>
-      <tr>
-      <td><%= image_tag(art.picture, width: 250, height: 160) if art.picture.attached? %></td>
-        <td><%= art.title %></td>
-        <td><%= art.description %></td>
-        <td><%= art.size %></td>
-        <td><%= art.price %></td>
-        <td><%= art.user_id %></td>
-        <td><%= link_to 'Show', art %></td>
-        <td><%= link_to 'Edit', edit_art_path(art) %></td>
-        <td><%= link_to 'Remove', art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Art', new_art_path %>
+<div class="card mb-3 bg-light" style="background-image: url(/assets/background-pink-blue.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;">
+  <div class="card-body">
+    <h1 class="card-title">My Artworks</h1>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <p class="card-text">Some little art quote here.</p>
+    <%= link_to 'Add New Art', new_art_path, class: "btn btn-dark btn-md text-white" %>
+  </div>
+</div>
+<div class="container">
+<div class="row">
+  <% @arts.each do |art|%>
+  <div class="card" style="width: 20rem; margin: 20px; padding: 20px;">
+    <%= image_tag art.picture, class:"card-img-top", alt:"Artwork" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= art.title %></h5>
+      <p class="card-text"><%= art.description%></p>
+      <h4><%= number_to_currency(art.price) %></h4>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Show', art, class:"btn btn-dark text-white" %>
+    </div>
+  </div>
+  <% end %>
+    </div>
+  </div>
+</div>
+</div>
 </div>

@@ -34,7 +34,8 @@
 </p>
 
 <% if current_user == @art.user%>
-<%= link_to 'Edit', edit_art_path(@art) %> |
+<%= link_to 'Edit', edit_art_path(@art) %> | 
+<%= link_to 'Remove', @art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' } %> |
 <%= link_to 'Back', arts_path %>
 <% else %>
 <%= link_to "Buy Now!", new_order_path(art_id: @art.id) %> 
