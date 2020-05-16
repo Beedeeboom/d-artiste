@@ -1,9 +1,11 @@
-<div class="container text-white" style="background-color: #000;">
+<div style="background-color: #000;">
+<div class="container text-white" >
 <br>
 <br>
 <br>
 <p id="notice"><%= notice %></p>
 <h1><%= @art.title %><h1>
+<h3>Art by: <%= @art.user.username %></h3>
 <p><%= @art.description %></p>
 <p>
   <strong>Size:

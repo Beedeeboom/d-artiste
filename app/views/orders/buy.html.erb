@@ -2,10 +2,18 @@
 <div class="jumbotron jumbotron-fluid" style= "height: 300px; background-image: url(/assets/background-pink-blue.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;">
   <div class="container">
     <p id="notice"><%= notice %></p>
-    <h1 class="display-4">Buy Art</h1>
-    <p class="lead text-dark">"Creativity is contagious pass it on" - Albert Einstein</p>
-    <br>
-    <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark btn-md text-white" %>
+    <% if user_signed_in? %>
+      <h1>Welcome, <%= current_user.username %></h1>
+      <p class="lead text-dark">"Creativity is contagious pass it on" - Albert Einstein</p>
+      <br>
+      <%= link_to 'Add Your Artwork', new_art_path, class: "btn btn-dark btn-md text-white" %>
+    <% else %>
+      <h1>Buy or Sell Art</h1>
+      <p class="lead text-dark">"Creativity is contagious pass it on" - Albert Einstein</p>
+      <br>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark btn-md text-white" %>
+      <br>
+    <% end %>
   </div>
 </div>
 
@@ -16,6 +24,7 @@
     <%= image_tag art.picture, class:"card-img-top", alt:"Artwork" %>
     <div class="card-body">
       <h5 class="card-title"><%= art.title %></h5>
+      <h6>Art by: <%= art.user.username %></h6>
       <p class="card-text"><%= art.description%></p>
       <h4><%= number_to_currency(art.price) %></h4>
     </div>

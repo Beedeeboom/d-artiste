@@ -86,6 +86,6 @@ class ArtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def art_params
-      params.require(:art).permit(:picture, :title, :description, :size, :price, :user_id)
+      params.require(:art).permit(:picture, :title, :description, :size, :price, :user_id, :username)
     end
 end
