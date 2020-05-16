@@ -1,50 +1,29 @@
-<div class="container">
+<div class="container text-white" style="background-color: #000;">
 <br>
 <br>
 <br>
 <p id="notice"><%= notice %></p>
+<h1><%= @art.title %><h1>
+<p><%= @art.description %></p>
+<p>
+  <strong>Size:
+  <%= @art.size %> | Price: <%= number_to_currency @art.price %> </strong>
+</p>
 <% if current_user == @art.user%>
-<h1>Your Artwork</h1>
+<%= link_to 'Edit', edit_art_path(@art), class: "btn btn-secondary btn-md text-white" %>
+<%= link_to 'Remove', @art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' }, class: "btn btn-dark btn-md text-white"%>
+<%= link_to 'Back', arts_path, class: "btn btn-secondary btn-md text-white" %>
+<br>
+<br>
 <% else %>
-<h1>Artwork</h1>
+<%= link_to "Buy Now!", new_order_path(art_id: @art.id), class: "btn btn-light btn-md text-dark" %> <%= link_to "Back", buy_order_path, class: "btn btn-secondary btn-md text-white" %> 
+<br>
+<br>
 <% end %>
-
 <p>
-  <%= image_tag @art.picture, width: 300 %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @art.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @art.description %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @art.size %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency @art.price %>
-</p>
-
-<% if current_user == @art.user%>
-<%= link_to 'Edit', edit_art_path(@art) %> | 
-<%= link_to 'Remove', @art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' } %> |
-<%= link_to 'Back', arts_path %>
-<% else %>
-<%= link_to "Buy Now!", new_order_path(art_id: @art.id) %> 
-<% end %>
+  <%= image_tag @art.picture, width: 500 %>
 <br>
 <br>
 <br>
 <div>
 
-
-
-  
