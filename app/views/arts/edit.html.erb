@@ -2,10 +2,15 @@
 <br>
 <br>
 <br>
-<h1>Editing Art</h1>
-
+<div class="container bg-secondary text-light" style="width: 400px;">
+<br>
+<h3>Editing Art</h3>
+<br>
+</div>
 <%= render 'form', art: @art %>
-
-<%= link_to 'Show', @art %> |
-<%= link_to 'Back', arts_path %>
+<br>
+<%= link_to 'Show', @art, class: "btn btn-secondary btn-md text-white" %> |
+<%= link_to 'Back', arts_path, class: "btn btn-dark btn-md text-white" %>
+<br>
+<br>
 </div>

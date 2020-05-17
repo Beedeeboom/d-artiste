@@ -9,7 +9,7 @@
     <h3><%= @art.title %><h3>
     <h5 style="color: pink;">Art by: <%= @art.user.username %></h5>
     <p>
-      <strong>Size:<%= @art.size %> | Price: <%= number_to_currency @art.price %></strong>
+      <strong> Max Print Size (cm): <%= @art.size %> | Price: <%= number_to_currency @art.price %></strong>
     </p>
     <% if current_user == @art.user%>
     <%= link_to 'Edit', edit_art_path(@art), class: "card-link btn btn-secondary btn-md text-white" %>

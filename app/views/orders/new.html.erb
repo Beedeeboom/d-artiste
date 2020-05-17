@@ -1,12 +1,22 @@
 <br>
 <br>
 <br>
-<div class="container">
-<h1>Your Order</h1>
-<%= image_tag @art.picture, width: 120 if @art.picture.attached? %>
-<h1><%= @art.title %></h1>
-<h5><%= number_to_currency @art.price %></h5>
+<div class="container text-light" style="background: #000; width: 400px;">
+<br>
+<br>
+<h2 style="color: pink;">Your Order</h2>
+<br>
+<%= image_tag @art.picture, width: 250 if @art.picture.attached? %>
+<br>
+<br>
+<h4><%= @art.title %></h4>
+<h6 style="color: pink;">Art by: <%= @art.user.username %></h6>
+<br>
+<h5>Total ($AUD): <%= number_to_currency @art.price %></h5>
+<br>
 <button id="pay-now">Checkout Now</button>
+<br>
+<br>
 </div>
 <script src="https://js.stripe.com/v3/"></script>
 
