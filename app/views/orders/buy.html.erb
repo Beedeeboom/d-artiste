@@ -24,7 +24,7 @@
     <%= image_tag art.picture, class:"card-img-top", alt:"Artwork" %>
     <div class="card-body">
       <h5 class="card-title"><%= art.title %></h5>
-      <h6>Art by: <%= art.user.username %></h6>
+      <h6 style="color: #9E1F63;">Art by: <%= art.user.username %></h6>
       <p class="card-text"><%= art.description%></p>
       <h4><%= number_to_currency(art.price) %></h4>
     </div>

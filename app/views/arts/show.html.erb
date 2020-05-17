@@ -2,11 +2,12 @@
 <br>
 <br>
 <br>
-<p id="notice"><%= notice %></p>
 <div class="card text-white" style="background-color: #000">
   <div class="card-body">
+    <p id="notice"><%= notice %></p>
+    <br>
     <h3><%= @art.title %><h3>
-    <h5>Art by: <%= @art.user.username %></h5>
+    <h5 style="color: pink;">Art by: <%= @art.user.username %></h5>
     <p>
       <strong>Size:<%= @art.size %> | Price: <%= number_to_currency @art.price %></strong>
     </p>
@@ -23,6 +24,8 @@
     <% end %>
     <p>
       <%= image_tag @art.picture, width: 500 %>
+      <br>
+      <br>
   </div>
 </div>
 <br>
