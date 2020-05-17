@@ -1,31 +1,31 @@
-<div style="background-color: #000;">
-<div class="container text-white" >
+<div class="container" >
 <br>
 <br>
 <br>
 <p id="notice"><%= notice %></p>
-<h1><%= @art.title %><h1>
-<h3>Art by: <%= @art.user.username %></h3>
-<p><%= @art.description %></p>
-<p>
-  <strong>Size:
-  <%= @art.size %> | Price: <%= number_to_currency @art.price %> </strong>
-</p>
-<% if current_user == @art.user%>
-<%= link_to 'Edit', edit_art_path(@art), class: "btn btn-secondary btn-md text-white" %>
-<%= link_to 'Remove', @art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' }, class: "btn btn-dark btn-md text-white"%>
-<%= link_to 'Back', arts_path, class: "btn btn-secondary btn-md text-white" %>
-<br>
-<br>
-<% else %>
-<%= link_to "Buy Now!", new_order_path(art_id: @art.id), class: "btn btn-light btn-md text-dark" %> <%= link_to "Back", buy_order_path, class: "btn btn-secondary btn-md text-white" %> 
-<br>
-<br>
-<% end %>
-<p>
-  <%= image_tag @art.picture, width: 500 %>
+<div class="card text-white" style="background-color: #000">
+  <div class="card-body">
+    <h3><%= @art.title %><h3>
+    <h5>Art by: <%= @art.user.username %></h5>
+    <p>
+      <strong>Size:<%= @art.size %> | Price: <%= number_to_currency @art.price %></strong>
+    </p>
+    <% if current_user == @art.user%>
+    <%= link_to 'Edit', edit_art_path(@art), class: "card-link btn btn-secondary btn-md text-white" %>
+    <%= link_to 'Remove', @art, method: :delete, data: { confirm: 'Are you sure, you want to remove your artwork?' }, class: "btn btn-dark btn-md text-white"%>
+    <%= link_to 'Back', arts_path, class: "btn btn-secondary btn-md text-white" %>
+    <br>
+    <br>
+    <% else %>
+    <%= link_to "Buy Now!", new_order_path(art_id: @art.id), class: "btn btn-light btn-md text-dark" %> <%= link_to "Back", buy_order_path, class: "btn btn-secondary btn-md text-white" %> 
+    <br>
+    <br>
+    <% end %>
+    <p>
+      <%= image_tag @art.picture, width: 500 %>
+  </div>
+</div>
 <br>
 <br>
 <br>
 <div>
-
