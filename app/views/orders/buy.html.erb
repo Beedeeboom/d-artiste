@@ -1,12 +1,17 @@
+
+<!-- Accessible in the nav bar through the "Buy Art" tab -->
+<!-- Renders all user artworks available for purchase -->
 <div style="background: #000;">
 <div class="jumbotron jumbotron-fluid" style= "height: 300px; background-image: url(/assets/background-pink-blue.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;">
   <div class="container">
     <p id="notice"><%= notice %></p>
+    <%# If user is signed-in will render a "Welcome, username" %>
     <% if user_signed_in? %>
       <h1>Welcome, <%= current_user.username %></h1>
       <p class="lead text-dark">"Creativity is contagious pass it on" - Albert Einstein</p>
       <br>
       <%= link_to 'Add Your Artwork', new_art_path, class: "btn btn-dark btn-md text-white" %>
+      <%# Else if user not signed in will render a slightly different view with option to buy art or sign in to sell art %>
     <% else %>
       <h1>Buy or Sell Art</h1>
       <p class="lead text-dark">"Creativity is contagious pass it on" - Albert Einstein</p>
@@ -16,7 +21,7 @@
     <% end %>
   </div>
 </div>
-
+<!-- Renders all user artworks -->
 <div class="container">
 <div class="row">
   <% @arts.each do |art|%>

@@ -11,8 +11,10 @@
   </head>
 
   <body style="background-image: url(/assets/background-pink-blue.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;">
+  <!-- Nav Bar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
+      <!-- D-Artiste Logo -->
       <%= link_to root_path do %>
       <%= image_tag("D-Artiste-Logo-small.png", alt: "logo", class: "navbar-brand d-flex align-items-center") %>
       <% end %>
@@ -65,6 +67,8 @@
     </nav> 
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p> 
+    
+    <!-- Yields application views which will be rendered dependent on controller to view action -->
     <%= yield %>
   </body>
 </html>

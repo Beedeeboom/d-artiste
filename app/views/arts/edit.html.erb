@@ -1,3 +1,4 @@
+<!-- Edit view arts/id/edit, enables a signed-in user to edit their artwork -->
 <div class="container">
 <br>
 <br>
@@ -9,6 +10,7 @@
 </div>
 <%= render 'form', art: @art %>
 <br>
+<!-- Gives the option to go to "Show" view or "Back" -->
 <%= link_to 'Show', @art, class: "btn btn-secondary btn-md text-white" %> |
 <%= link_to 'Back', arts_path, class: "btn btn-dark btn-md text-white" %>
 <br>

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   rolify
   after_create :assign_default_role
 
+  #Assigns default user role 
   def assign_default_role
     add_role(:user)
   end
