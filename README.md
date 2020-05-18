@@ -5,13 +5,13 @@ T2A2 - Marketplace Project | By Stephanie Duffieux | May 2020
 ![D'Artiste Logo](./docs/D-Artiste-Logo-Black.png)
 
 
-    :woman_artist: View deployed app here - [D-Artiste Website](https://d-artiste.herokuapp.com/)
+* [View deployed application here](https://d-artiste.herokuapp.com/)
 
-    :woman_technologist: View Github repository here - [D-Artiste Github Repository](https://github.com/Beedeeboom/d-artiste/)
+* [D'Artiste Github Repository](https://github.com/Beedeeboom/d-artiste/)
 
 ## R7. Identification of the problem solved by building this particular marketplace app.
 
-D'Artiste ("Digital Artist" with Artiste spelt the French way with an "e") is a marketplace application created for paint artists, digital artists and graphic designers of all genres to showcase and sell their artwork to art lovers. The purpose of D'Artiste is to allow artists to sell their art without the hassle of printing and posting. By removing the print side of purchasing art, this also reduces the cost of purchasing artworks as the buyer would simply be able to download a high quality print file with a maximum print size specified by the artist (e.g 100 x 150 cms) which they can then use to print with their local printer on a finishing and frame of their choice (e.g canvas print, giclee prints, hahnemuhle etching paper prints, watercolor prints etc...)
+D'Artiste ("Digital Artist" with Artiste spelt the French way with an "e") is a marketplace application created for paint artists, digital artists and graphic designers of all genres to showcase and sell their artwork to art lovers. The purpose of D'Artiste is to allow artists to sell their art without the hassle of printing and posting. By removing the print side of purchasing art, this also reduces the cost of purchasing artworks as the buyer would simply be able to download a high quality print file with a maximum print size specified by the artist (e.g 100 x 150 cms) which they can then use to print with their local printer on a finishing and frame of their choice (e.g canvas print, giclee prints, hahnemuhle etching paper prints, watercolour prints etc...)
 
 
 ## R8. Why is it a problem that needs solving?
@@ -35,7 +35,7 @@ Github repository - https://github.com/Beedeeboom/d-artiste
 
 ### Purpose
 
-D'Artiste is a two way marketplace application built for artists to show case and sell their digital artworks to art lovers. The purpose of the application is for art lovers to be able to purchase unique and creative digital art at a reduced cost. In order for the costs to be lower than artworks available on other platforms an artist simply sells their digital artwork as a high quality print file with an optimised maximum print size (e.g 100 x 150 cms) without providing printing and framing. The buyer can simply download their purchased artwork file and print with their preferred printer on their choice of print medium and framing. 
+D'Artiste is a two way marketplace application built for artists to show case and sell their digital artworks to art lovers. The purpose of the application is for art lovers to be able to purchase unique and creative digital art at a reduced cost. In order for the costs to be lower than artworks available on other platforms an artist simply sells their digital artwork as a high quality print file with an optimised maximum print size (e.g 100 x 150 cm) without providing printing and framing. The buyer can simply download their purchased artwork file and print with their preferred printer on their choice of print medium and framing. 
 
 D'Artiste is a platform which aims at building a community of artists and art lovers. Artists of the D'Artiste community offer high quality designs at an affordable price.
 
@@ -43,17 +43,17 @@ D'Artiste is a platform which aims at building a community of artists and art lo
 
 * A Home page is displayed in the root path and greeting users to D'Artiste and prompting them to sign up or view art listing on the "Buy Art" tab. 
 
-* An About page is accessbile to the user in the navigation bar which describes the purpose and mission of the application.
+* An About page is accessible to the user in the navigation bar which describes the purpose and mission of the application.
 
-* A Contact page is accssible to the user if they wish to contact the site admin.
+* A Contact page is accessible to the user if they wish to contact the site admin.
 
-* A recurrent navigation bar will be available to the user throughtout the application allowing the user to easily navigate from one page to another, to sign up, log in, log out or to view their account.
+* A recurrent navigation bar will be available to the user throughout the application allowing the user to easily navigate from one page to another, to sign up, log in, log out or to view their account.
 
 * Users can access art listings on the "Buy Art" page without having to sign in or sign up. They can chose to preview any artwork with an option to purchase which then redirects the user to the payment portal.
 
 * Users can sign up to sell their art by clicking the "Sign Up" link available in the navigation bar. The user is also prompted to sign up if they wish to sell their art on the "Home", "About" and "Buy Art" page. 
 
-* Registered users have the possiblity to add new art to their account by accessing the "My Account" tab within the navigation bar which is available to the user when they are signed in. 
+* Registered users have the possibility to add new art to their account by accessing the "My Account" tab within the navigation bar which is available to the user when they are signed in. 
 
 * Registered and authorised users can view their art listing on the "My Account" tab and have the ability to edit or remove their artwork.
 
@@ -103,7 +103,7 @@ D'Artiste is a platform which aims at building a community of artists and art lo
 
 ### Target audience
 
-D-Artiste aims at attrating a two sided market with the target audience on one side of new and uprising artists of all genres, ranging from paint artists, digital artists to graphic designers and a target audience on another side of art lovers, modern interior enthusiats between the ages of 25 to 45 seeking to purchase unique and creative digital artworks at a reduced cost. 
+D'Artiste aims at attracting a two sided market with the target audience on one side of new and uprising artists of all genres, ranging from paint artists, digital artists to graphic designers and a target audience on another side of art lovers, modern interior enthusiasts between the ages of 25 to 45 seeking to purchase unique and creative digital artworks at a reduced cost. 
 
 ### Tech stack (e.g. html, css, deployment platform, etc)
 
@@ -130,7 +130,7 @@ D-Artiste aims at attrating a two sided market with the target audience on one s
 
 ## R12. Application User Stories
 
-User stories enable us to build a clear understanding of what is expected to achieve for a minium viable product (MVP) and what we need to focus on to build all features and functions of our application. It is also important to allocate a size and order of importance to each of our User stories to ensure a MVP is delivered on time. To do this a Trello board was established to define the user features of D'Artiste marketplace application. Each feature was allocated a size from small, medium to large (green, orange, red) and a purple tag added for MVP user features. D'Artiste users can be either Artists or Buyers therefore the user stories were listed in three different columns with common user features in the "User Story" column, Artist features in the "Artist Story" column and the Buyer features in the "Buyer Story" Column.
+User stories enable us to build a clear understanding of what is expected to achieve for a minimum viable product (MVP) and what we need to focus on to build all features and functions of our application. It is also important to allocate a size and order of importance to each of our User stories to ensure a MVP is delivered on time. To do this a Trello board was established to define the user features of D'Artiste marketplace application. Each feature was allocated a size from small, medium to large (green, orange, red) and a purple tag added for MVP user features. D'Artiste users can be either Artists or Buyers therefore the user stories were listed in three different columns with common user features in the "User Story" column, Artist features in the "Artist Story" column and the Buyer features in the "Buyer Story" Column.
 
 Link to Trello Board User Stories - https://trello.com/b/eseB1FEr/d-artiste
 
@@ -189,12 +189,12 @@ D'Artiste will make use to the following third party services:
 * Heroku - heroku.com
 
     * Heroku is used as a deployment platform for D'Artiste marketplace application.
-    Heroku is a popular cloud platform which developers use to deploy and manage their applications. Heroku uses Git as its primary means for deploying applications meaning similar commands used with Github are used with Heroku (e.g git push heroku master would push our master branch to the heroku platform).
+    Heroku is a popular cloud platform which developers use to deploy and manage their applications. Heroku uses Git as its primary means for deploying applications meaning similar commands used with Github are used with Heroku (e.g git push heroku master would push our master branch to the Heroku platform).
 
 * Cloudinary - cloudinary.com
 
     * Cloudinary is used to store user image uploads on D'Artiste marketplace application.
-    Cloudinary is an easy to use cloud-based image and video management platform. Using a cloud based system to store images enables to optimize site performance and user experience with faster page load times.
+    Cloudinary is an easy to use cloud-based image and video management platform. Using a cloud based system to store images enables to optimise site performance and user experience with faster page load times.
 
 * Devise gem - https://github.com/heartcombo/devise
 
@@ -206,9 +206,12 @@ D'Artiste will make use to the following third party services:
 
 * Stripe - stripe.com
 
-    * Stripe is a PCI (Payment Card Industry) compliant payment platform which gives online businesses and markeplace applications the ability to accept online credit or debit card payments from their users. D'Artiste marketplace application integrates Stripe as it's checkout payment system, although at this stage the payment system in D'Artiste is only available in test mode.
-* Postgresql - postgresql.org
-    * Postgresql is used as a relational database management system for D'Artiste markeplace. Postgresql is Multiversion Concurrency Control (MVCC) allowing changes to be made to the database without affecting other transactions. 
+    * Stripe is a PCI (Payment Card Industry) compliant payment platform which gives online businesses and marketplace applications the ability to accept online credit or debit card payments from their users. D'Artiste marketplace application integrates Stripe as its checkout payment system, although at this stage the payment system in D'Artiste is only available in test mode.
+
+* PostgreSQL - postgresql.org
+
+    * PostgreSQL is used as a relational database management system for D'Artiste marketplace. PostgreSQL is Multi-version Concurrency Control (MVCC) allowing changes to be made to the database without affecting other transactions. 
+
 
 
 ## R17. Describe your projects models in terms of the relationships (active record associations) they have with each other
