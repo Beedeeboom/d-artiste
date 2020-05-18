@@ -186,12 +186,12 @@ A registered user of the application can log in and view their account through t
 
 D'Artiste will make use to the following third party services:
 
-* Heroku - heroku.com
+* Heroku - https://dashboard.heroku.com/apps
 
     * Heroku is used as a deployment platform for D'Artiste marketplace application.
     Heroku is a popular cloud platform which developers use to deploy and manage their applications. Heroku uses Git as its primary means for deploying applications meaning similar commands used with Github are used with Heroku (e.g git push heroku master would push our master branch to the Heroku platform).
 
-* Cloudinary - cloudinary.com
+* Cloudinary - https://cloudinary.com/
 
     * Cloudinary is used to store user image uploads on D'Artiste marketplace application.
     Cloudinary is an easy to use cloud-based image and video management platform. Using a cloud based system to store images enables to optimise site performance and user experience with faster page load times.
@@ -200,15 +200,15 @@ D'Artiste will make use to the following third party services:
 
     * Devise is a popular gem used with Rails which provides an effective and secure solution to authenticate users. Devise provides all the functionalities and helper methods to allow application users to sign up and log in. Devise can be installed to a Rails application by simply adding it to our Gemfile "gem 'devise", running a bundle install and finalising the installation with the "rails generate devise:install" command line. 
 
-* Rolify gem use to allocate user authorisation (user role)
+* Rolify gem - https://github.com/RolifyCommunity/rolify
 
     * Similar to Devise, Rolify is a popular gem used with Rails to authorise user access within an application and assigning roles to specific users. With Rolify we can specify what users can access and what they can view on each page. Within D'Artiste marketplace application, Rolify is used to assign a default role to users when they sign up and then assigns a role "artist" to users who create and save new artwork listings to their account and giving ownership to the user of their artwork.
 
-* Stripe - stripe.com
+* Stripe - https://stripe.com/au
 
     * Stripe is a PCI (Payment Card Industry) compliant payment platform which gives online businesses and marketplace applications the ability to accept online credit or debit card payments from their users. D'Artiste marketplace application integrates Stripe as its checkout payment system, although at this stage the payment system in D'Artiste is only available in test mode.
 
-* PostgreSQL - postgresql.org
+* PostgreSQL - https://www.postgresql.org/
 
     * PostgreSQL is used as a relational database management system for D'Artiste marketplace. PostgreSQL is Multi-version Concurrency Control (MVCC) allowing changes to be made to the database without affecting other transactions. 
 
