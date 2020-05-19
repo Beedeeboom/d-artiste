@@ -249,14 +249,26 @@ The Art model can access all the information relating to art listings from the d
 
 ## R18. Discuss the database relations to be implemented in your application
 
-The application database contains the following tables:
+Further to the application's Entity Relationship Diagram which depicts how entities relate to each other within the application the database relations are implemented within the following tables :
 
-* Active Storage Attachments
+* Active Storage Attachments 
+    * Contains the storage attachments (pictures) saved by the user when creating a new art listing. This table will store the name of the file, its record type, record id and a blob_id which is a foreign key from the Active Storage Blobs table.
+
 * Active Storage Blobs
+    * The Active Storage Blobs table forms a relationship with the active Active Storage Attachments table, it contains many active storages (pictures) from that table. When a picture is added from the Art table all the metadata of the file, file name, byte size and key are stored in the Active Storage Blobs table and passed to the cloud based platform (Cloudinary) which stores the picture.
+
 * Arts
+    * The Arts table stores all the information about art listings created and saved by registered Users; title, description, size, price and user_id. It forms a relationship with the Users and Roles table through the Users_Roles joined table which contains both the user_id and role_id foreign keys. The Art table data only exists when it belongs to a User with a Role. The Arts table also forms a relationship with the Active Storage Attachments table through its foreign key which enables the Art table to store a picture to a cloud based platform (Cloudinary).
+
 * Roles
+    * The Roles table implemented with the Rolify gem, holds the role name, resource type, and resource id. Its primary key "role_id" holds a relationship with the Users table through the Users_Roles joined table. Users are given a default role of "user" when they sign up and are also given the role of "artist" when they add art listings to their account. 
+
 * Users
+    * The Users table implemented with the Devise gem, holds data which identifies a user by its unique username, email and password(encrypted). The User table forms a relationship with the Art table through the Users_Roles joined table which passes a role_id to the User allowing the User table to create ownership of the Art table elements belonging to a unique user. A User table can have many Arts.
+
 * Users Roles (joined table)
+    * The User Roles table is a joined table used to link both the User and Role table to the Art table. This table contains both the "user_id" and "role_id" foreign keys which allow the joined table relationship.
+
 
 ## R19. Provide your database schema design</summary>
 
