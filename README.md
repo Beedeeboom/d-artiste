@@ -175,11 +175,18 @@ Extra user stories were added during the building process of the application.
 
 * MVP components of D'Artiste:
 
-A user can navigate through the application, view the Home page which prompts the user to join the D'Artiste community and either view art listings or sign up as an artist to sell their art. A user can also view the About page which gives an overview of the applications purpose and mission.
+A user can navigate through the application, view the Home page which prompts the user to join the D'Artiste community and either view art listings through the "Buy Art" tab or sign up as an artist to sell their art. A user can also view the About page which gives an overview of the applications purpose and mission.
 
 As a marketplace application, D'Artiste enables its users to view artworks listed for sale by other users, each artwork will show a title, artist name, description, size and price. A user can navigate through the main pages of the application "home, about, contact, buy art" without having to sign in or register an account and is able to select and preview artworks they wish to purchase. A user can also proceed to the "checkout" and pay using a credit or debit card (only test mode payment at this stage).
 
-A registered user of the application can log in and view their account through the "My Account" tab which contains a list of their artworks available for sale to other users. In the same tab a registered user can add new artworks to their account and can edit or remove existing artworks. When creating and uploading a new artwork to their account a registered user is prompted to add a title, description, size, price and image to their listing. So to add a personalised touch to the user's experience, when a user is signed in they can view a "Welcome, username" when they visit their account page and the "Buy Art" page.
+A registered user of the application can log in and view their account through the "My Account" tab which contains a list of their artworks available for sale to other users. In the same tab a registered user can add new artworks to their account and can edit or remove existing artworks. When creating and uploading a new artwork to their account a registered user is prompted to add a title, description, size, price and picture to their listing. So to add a personalised touch to the user's experience, when a user is signed in they can view a "Welcome, username" greeting in the splash image section when they visit their account page and the "Buy Art" page.
+
+* Extras to the MVP components which will be added at a later time:
+
+    * Chat/messenger function which will allow potential art buyers to chat directly with artists. 
+    * Search functionality in the navigation bar which will allow users to search through the application for specific arts.
+    * Admin dashboard which will allow authorised admin users to fully control the application.
+    * Buyer dashboard which will allow registerd users to view a list of their purchased artworks.
 
 
 ## R16. Detail any third party services that your app will use
@@ -219,23 +226,37 @@ D'Artiste will make use to the following third party services:
 In order to make common operations easier and simpler between our models Rails Active Record associations allows us to connect our models to each other by declaring the type of association between each model. By associating models we can easily pass and relate the stored data from one model to the other. D'Artiste marketplace application contains three main models; User, Role and Art which relate to each other in the following ways:
 
 * The User model
+    * Has_many Arts
+    * Assigned a default role upon registration
+    * Assigned an artist role upon creation of Art
 
 The User model shares a relationship with the Art and Role model. A User can have many Arts and is assigned a default role upon registration. When a user signs up they are given a default role of ":user". Upon creating and saving a new art listing the user will be given an "artist" role with the specific "art_id" belonging to the user, this allows the application to give ownership of an artwork to a specific user and linking the data instances to each other.
 
 The User model can access the details of each registered user (with the user's username, email and password stored in the database). The application will only prompt the user to sign up if they wish to list their art for sale (The Devise gem is used with our User model to authenticate users). Any user wishing to browse the application's art listings is not required to sign up or sign in. However, strong parameters have been added to the Arts controller to ensure private params are secured between the User and Art model. The default "user_id" stored upon registration of a user can also be used for future purposes when a buyer dashboard will be created. For now we are mainly concentrating on the application's MVP.
 
 * Role model
+    * Has_and_belongs_to_many Users
 
 The Role model shares a relationship with the User model through the Users_Roles joined table. A Role has and belongs to many users. As described in the User model, a default user role will be assigned to a user when they sign up and a role of artist will be assigned to the user when they create and save a new art listing.
 
 
 * Art model
+    * Belongs_to User
+    * Has_one_attached picture (through Active Storage Attachments)
 
 The Art model can access all the information relating to art listings from the database (title, description, artist name, price and picture). One artwork "Art" belongs to a specific user, here we are calling the "belongs_to association between the Art and User model (A User has many Arts). An Art will be deleted if its User no longer exits, this is automatically generated within the User model with the "dependent: :destroy" method. The Art model also holds a "has_one_attached" relationship with the Active Storage Attachment table within the database. A User is prompted to add a picture of their Art upon creation which will then prompt the Active Storage Attachment table to store the picture within our cloud based storage platform (Cloudinary), through the Active Storage Blob table.
 
 
 ## R18. Discuss the database relations to be implemented in your application
 
+The application database contains the following tables:
+
+* Active Storage Attachments
+* Active Storage Blobs
+* Arts
+* Roles
+* Users
+* Users Roles (joined table)
 
 ## R19. Provide your database schema design</summary>
 
