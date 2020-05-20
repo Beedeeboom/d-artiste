@@ -409,12 +409,16 @@ In order to allocate and keep track of tasks during the creation of D'Artiste ma
 
 #### Trello board task allocation and managment | Created May 10th, 2020
 
-![Trello board screenshot phase 1](./docs/Trelloboard-task-management-10-05-2020.png)
+![Trello board screenshot update 1](./docs/Trelloboard-task-management-10-05-2020.png)
 
 #### Trello board task allocation and managment | Updated 13th May, 2020
 
-![Trello board screenshot phase 1](./docs/Trelloboard-task-management-13-05-2020.png)
+![Trello board screenshot update 2](./docs/Trelloboard-task-management-13-05-2020.png)
 
 #### Trello board task allocation and managment | Updated 17th May, 2020
 
-![Trello board screenshot phase 1](./docs/Trelloboard-task-management-17-05-2020.png)
+![Trello board screenshot update 3](./docs/Trelloboard-task-management-17-05-2020.png)
+
+#### Trello board task allocation and managment | Final updated 20th May, 2020 (MVP finalised)
+
+![Trello board screenshot update 4](./docs/Trelloboard-task-management-20-05-2020.png)
