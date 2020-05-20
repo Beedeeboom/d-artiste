@@ -41,7 +41,7 @@ D'Artiste is a platform which aims at building a community of artists and art lo
 
 ### Functionality / features
 
-* A Home page is displayed in the root path and greeting users to D'Artiste and prompting them to sign up or view art listing on the "Buy Art" tab. 
+* A Home page is displayed in the root path, greeting users to D'Artiste and prompting them to sign up or view art listing on the "Buy Art" tab. 
 
 * An About page is accessible to the user in the navigation bar which describes the purpose and mission of the application.
 
@@ -173,7 +173,7 @@ Extra user stories were added during the building process of the application.
 
 ## R15. Explain the different high-level components (abstractions) in your app
 
-D'Artiste was built using the Model View Controller framework (MVC) and the Ruby programming language. The relationship between the Model, View and Controller is known as the Request-Response Cycle which uses a router to store pathways (URI's or Uniform Resource Identifier's) for each Controller action. When a user interacts with the application this sends a request to the router which prompts the Controller action. The Controller passes the request to the Model which retrieves the data from the database and returns it to the Controller. The Controller then exchanges the information from the Model with the View who in returns sends back the information to the Controller in the form of a HTML file. Finally the Controller is able to return to the information to the web browser in human readable language (HTML) for the user to view.
+D'Artiste was built using the Model View Controller framework (MVC) and the Ruby programming language. The relationship between the Model, View and Controller is known as the Request-Response Cycle which uses a router to store pathways (URI's or Uniform Resource Identifier's) for each Controller action. When a user interacts with the application this sends a request to the router which prompts the Controller action. The Controller passes the request to the Model which retrieves the data from the database and returns it to the Controller. The Controller then exchanges the information from the Model with the View who in return sends back the information to the Controller in the form of a HTML file. Finally the Controller is able to return the information to the web browser in human readable language (HTML) for the user to view. The Controller can also render information from the View without interacting with the Model if it doesn't require any information from the database.
 
 The application was built with the following high level components:
 
