@@ -1,14 +1,14 @@
 class OrdersController < ApplicationController
-  # Buy order action render the "Buy Art" view which list all artworks available for purchase.
+  # Lists all artworks available for purchase.
   # The user doesn't have to be signed in to purhcase art and can preview all artworks.
+  # All art is eager loaded using the .includes method to use fewer queries to optimize site performance.
   def buy
-    @arts = Art.all
+    @arts = Art.includes(params[:art]).limit(10)
   end
 
-  # New order action enables a user to purchase a selected artwork.
-  # Redirects the user to the first view which lists the artwork they wish to purchase.
-  # User can click "Checkout Now" which then redirects them to the payment portal.
-  # Third party payment API (Stripe.com)
+  # New action queries the Art model to find the params of the selected art.
+  # View enables a user to purchase a selected artwork.
+  # In the view the user can click "Checkout Now" which then redirects them to the payment portal (third party payment API Stripe.com)
   def new
     @art = Art.find(params[:art_id])
     Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key)
